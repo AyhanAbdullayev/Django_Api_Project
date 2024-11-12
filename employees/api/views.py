@@ -85,10 +85,10 @@ class PositionRetrieveCreateApiView(RetrieveUpdateAPIView):
     
     def get_object(self):
         try:
-            department_id = Department.objects.get(id=self.kwargs["pk"])
-            return department_id 
-        except Department.DoesNotExist:
-            raise NotFound(detail=_("No Department matches the given query."))
+            position_id = Position.objects.get(id=self.kwargs["pk"])
+            return position_id 
+        except Position.DoesNotExist:
+            raise NotFound(detail=_("No Position matches the given query."))
 
 
 
@@ -102,10 +102,10 @@ class PositionDestroyAPIView(RetrieveDestroyAPIView):
 
     def get_object(self):
         try:
-            department_id = Department.objects.get(id=self.kwargs["pk"])
-            return department_id 
-        except Department.DoesNotExist:
-            raise NotFound(detail=_("No Department matches the given query."))
+            position_id = Position.objects.get(id=self.kwargs["pk"])
+            return position_id 
+        except Position.DoesNotExist:
+            raise NotFound(detail=_("No Position matches the given query."))
 
 
 class EmployeeCreateApiView(ListCreateAPIView):
@@ -129,10 +129,10 @@ class EmployeeReitiveUpdateApiView(RetrieveUpdateAPIView):
     
     def get_object(self):
         try:
-            department_id = Department.objects.get(id=self.kwargs["pk"])
+            department_id = Employee.objects.get(id=self.kwargs["pk"])
             return department_id 
-        except Department.DoesNotExist:
-            raise NotFound(detail=_("No Department matches the given query."))
+        except Employee.DoesNotExist:
+            raise NotFound(detail=_("No Employee matches the given query."))
 
     
 
@@ -146,9 +146,9 @@ class EmployeeDestroyAPIView(RetrieveDestroyAPIView):
     
     def get_object(self):
         try:
-            department_id = Department.objects.get(id=self.kwargs["pk"])
-            return department_id 
-        except Department.DoesNotExist:
-            raise NotFound(detail=_("No Department matches the given query."))
+            employee_id = Employee.objects.get(id=self.kwargs["pk"])
+            return employee_id 
+        except Employee.DoesNotExist:
+            raise NotFound(detail=_("No Employee matches the given query."))
         
 
